@@ -33,13 +33,13 @@ class UserController extends Controller
         $email = $request['email'];
         $password = $request['password'];
 
-        $user = User::create();
+        $user = new User();
         $user->first_name = $first_name;
         $user->email = $email;
         $user->password = $password;
 
         $user->save();
-        return redirect()->back();
+        return redirect()->route('welcome');
     }
 
     /**

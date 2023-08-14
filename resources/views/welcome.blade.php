@@ -9,10 +9,10 @@ Welcome!
   <div class="col-md-6">
     <h3>Sign Up</h3>
     <form action="{{ route('signup') }}" method="POST">
-    @csrf
+
       <div class="form-group">
         <label for="first_name" class="mb-2">First Name</label>
-        <input class="form-control" type="text" name="fname" id="fname" />
+        <input class="form-control" type="text" name="first_name" id="fname" />
       </div>
       <div class="form-group">
         <label for="email" class="mb-2">Email</label>
@@ -22,6 +22,7 @@ Welcome!
         <label for="password" class="mb-2">Password</label>
         <input class="form-control" type="password" name="password" id="password" />
         <button type="submit" class="btn btn-primary mt-2">Submit</button>
+        <input type="hidden" name="_token" value="{{ Session::token() }}"/>
       </div>
     </form>
   </div>

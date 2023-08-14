@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
-Route::post('/signup', [UserController::class, 'store']);
+Route::post('/signup', [UserController::class, 'store'])->name('signup');
