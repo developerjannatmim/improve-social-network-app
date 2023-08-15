@@ -12,7 +12,7 @@ Welcome!
 
       <div class="form-group">
         <label for="first_name" class="mb-2">First Name</label>
-        <input class="form-control" type="text" name="first_name" id="fname" />
+        <input class="form-control" type="text" name="first_name" id="first_name" />
       </div>
       <div class="form-group">
         <label for="email" class="mb-2">Email</label>
