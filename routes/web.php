@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/signup', [UserController::class, 'store'])->name('signup');
-
-Route::get('/dashboard', [UserController::class, 'getdashboard']);
+Route::post('/signup', [UserController::class, 'getSignUp'])->name('signup');
+Route::post('/signin', [UserController::class, 'getSignIn'])->name('signin');
+Route::get('/dashboard', [UserController::class, 'getDashboard'])->name('dashboard');

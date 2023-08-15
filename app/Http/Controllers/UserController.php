@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -24,15 +25,23 @@ class UserController extends Controller
     //
   }
 
-  public function getdashboard()
+  public function getDashboard()
   {
     return view('dashboard');
+  }
+
+  public function getSignIn(Request $request)
+  {
+    if  (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])){
+      return redirect()->route('dashboard');
+    };
+      return redirect()->back();
   }
 
   /**
    * Store a newly created resource in storage.
    */
-  public function store(Request $request)
+  public function getSignUp(Request $request)
   {
     $first_name = $request['first_name'];
     $email = $request['email'];
@@ -44,6 +53,8 @@ class UserController extends Controller
     $user->password = $password;
 
     $user->save();
+    Auth::login($user);
+    
     return redirect()->route('dashboard');
   }
 
