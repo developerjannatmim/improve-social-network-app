@@ -49,5 +49,10 @@ Information:
 1. Middleware
 2. Route Protection
 
+## Laravel 5.2 PHP Build a social network - Creating the Dashboard View (tutorial-7)
+go to tutorial:
+https://www.youtube.com/watch?v=PkiHgAmYLec&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=7
 
+Information:
+1. dashboard design
 
