@@ -17,12 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', function () {
-    return view('welcome');
+        return view('welcome');
     })->name('home');
 
     Route::post('/signup', [UserController::class, 'getSignUp'])->name('signup');
     Route::post('/signin', [UserController::class, 'getSignIn'])->name('signin');
     Route::get('/dashboard', [PostController::class, 'getDashboard'])->name('dashboard')->middleware('auth');
+    Route::get('/{post_id}', [PostController::class, 'getDeletePost'])->name('delete');
 });
 
 Route::post('/createpost', [PostController::class, 'createNewPost'])->name('createpost');
