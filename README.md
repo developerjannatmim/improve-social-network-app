@@ -24,3 +24,20 @@ Information:
 1. Create User Model
 2. Migration file
 3. User Controller
+
+## Laravel 5.2 PHP Build a social network - Logging users in (tutorial-4)
+go to tutorial:
+## https://www.youtube.com/watch?v=atWUeGBIAAM&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=4
+
+Information:
+1. login form
+2. 
+3. 
+
+
+
+
+
+
+
+
