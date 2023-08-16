@@ -11,7 +11,21 @@ class PostController extends Controller
     public function createNewPost(Request $request) {
         $post = new Post();
         $post->body = $request['body'];
-        $request->user()->posts()->save($post);
+        $post->user_id = auth()->id();
+        $post->save();
+        
         return redirect()->route('dashboard');
+
+        //$request->user()->posts()->save($post);
+        // return response()->json([
+        //   'success' => true,
+        //   'status' => '200'
+        // ]);
+        // if ($post) {
+        //     return redirect()->back()->with('success', 'Your message has been successfully sent!!!');
+        // }
+        // return redirect() ->back() ->withInput() ->with('error', 'There was a failure while sending the message! ');
+        
     }
+    
 }

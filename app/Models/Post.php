@@ -7,10 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //use HasFactory;
+    use HasFactory;
 
-    public function user()
-    {
-      return $this->belongsTo('User');
-    }
+    protected $fillable = [
+      'body',
+       'user_id',
+      ];
+
+    // public function user()
+    // {
+    //   return $this->belongsTo('User');
+    // }
 }
