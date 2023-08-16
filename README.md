@@ -34,7 +34,12 @@ Information:
 2. login controller
 3. login route
 
+## Laravel 5.2 PHP Build a social network - Input Validation (tutorial-5)
+go to tutorial:
+https://www.youtube.com/watch?v=gybCjXYBgNA&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=5
 
+Information:
+1. input validation
 
 
 
