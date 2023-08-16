@@ -23,6 +23,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Blog</a>
+          <li class="nav-item">
+          <a class="nav-link" href="{{ route('home') }}">SignIn</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('home') }}">SignUp</a>
+        </li>
         </li>
       </ul>
     </div>
