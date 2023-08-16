@@ -105,3 +105,38 @@ Information:
 3. fix User Model
 4. fix Post Controller
 5. added post date
+
+## Laravel 5.2 PHP Build a social network - Deleting Posts (tutorial-11)
+go to tutorial:
+https://www.youtube.com/watch?v=VoYzc3TLwmQ&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=11
+
+Information:
+1. delete post
+2. create delete action in PostController
+3. create delete route in web
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

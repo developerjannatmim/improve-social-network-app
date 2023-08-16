@@ -13,7 +13,8 @@ class PostController extends Controller
     $posts = Post::all();
     return view('dashboard', ['posts' => $posts]);
   }
-  public function createNewPost(Request $request) {
+  public function createNewPost(Request $request)
+  {
 
     $this->validate($request, [
       'body' => 'required|max:1000'
@@ -25,10 +26,20 @@ class PostController extends Controller
     $request->user()->posts()->save($post);
     $message = "there was an error";
 
-    if($post->save()){
-      $message = "Your message has been successfully sent!!!";
+    if ($post->save()) {
+      $message = "Your Post added successfully";
     };
     return redirect()->route('dashboard')->with(['message' => $message]);
   }
-    
+
+  public function getDeletePost($post_id)
+  {
+    $post = Post::where('id', $post_id)->first();
+    $message = "Post isn't deleted";
+
+    if ($post->delete()) {
+      $message = "Post deleted successfully";
+    };
+    return redirect()->route('dashboard')->with(['message' => $message]);
+  }
 }
