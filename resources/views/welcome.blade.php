@@ -41,11 +41,11 @@ Welcome!
     <form action=" {{ route('signin') }} " method="POST">
       <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
         <label for="email" class="mb-2">Email</label>
-        <input class="form-control" type="text" name="email" id="email" />
+        <input class="form-control" type="text" name="email" id="email" value="{{Request::old('email')}}" />
       </div>
       <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
         <label for="password" class="mb-2">Password</label>
-        <input class="form-control" type="password" name="password" id="password" />
+        <input class="form-control" type="password" name="password" id="password" value="{{Request::old('password')}}" />
       </div>
       <button type="submit" class="btn btn-primary mt-2">Submit</button>
       <input type="hidden" name="_token" value="{{ Session::token() }}"/>

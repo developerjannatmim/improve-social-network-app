@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/', function () {
     return view('welcome');
+    })->name('home');
+    
+    Route::post('/signup', [UserController::class, 'getSignUp'])->name('signup');
+    Route::post('/signin', [UserController::class, 'getSignIn'])->name('signin');
+    Route::get('/dashboard', [UserController::class, 'getDashboard'])->name('dashboard')->middleware('auth');
 });
 
-Route::post('/signup', [UserController::class, 'getSignUp'])->name('signup');
-Route::post('/signin', [UserController::class, 'getSignIn'])->name('signin');
-Route::get('/dashboard', [UserController::class, 'getDashboard'])->name('dashboard');
