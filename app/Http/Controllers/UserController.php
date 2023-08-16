@@ -25,11 +25,6 @@ class UserController extends Controller
     //
   }
 
-  public function getDashboard()
-  {
-    return view('dashboard');
-  }
-
   /**
    * Store a newly created resource in storage.
    */
