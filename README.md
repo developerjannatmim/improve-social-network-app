@@ -34,10 +34,18 @@ Information:
 2. login Controller
 3. login route
 
+## Laravel 5.2 PHP Build a social network - Input Validation (tutorial-5)
+go to tutorial:
+https://www.youtube.com/watch?v=gybCjXYBgNA&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=5
 
+Information:
+1. Input Validation
 
+## Laravel 5.2 PHP Build a social network - Middleware & Route Protection (tutorial-6)
+go to tutorial:
+https://www.youtube.com/watch?v=4ECNmNWFEBA&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=6
 
-
-
-
+Information:
+1. Middleware
+2. Route Protection
 
