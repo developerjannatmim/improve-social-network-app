@@ -12,7 +12,6 @@ Welcome!
       <div class="form-group">
         <label for="first_name" class="mb-2">First Name</label>
         <input class="form-control" type="text" name="first_name" id="first_name" />
-      </div>
       <div class="form-group">
         <label for="email" class="mb-2">Email</label>
         <input class="form-control" type="text" name="email" id="email" />
@@ -28,6 +27,7 @@ Welcome!
   <div class="col-md-6">
     <h3>Sign In</h3>
     <form action=" {{ route('signin') }} " method="POST">
+    <form action="#" method="POST">
       <div class="form-group">
         <label for="email" class="mb-2">Email</label>
         <input class="form-control" type="text" name="email" id="email" />
