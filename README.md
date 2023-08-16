@@ -31,8 +31,8 @@ go to tutorial:
 
 Information:
 1. login form
-2. 
-3. 
+2. login controller
+3. login route
 
 
 
