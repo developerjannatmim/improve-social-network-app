@@ -1,3 +1,27 @@
+.error {
+    color: rgb(147, 37, 37);
+    border: 1px solid rgb(165, 51, 51);
+    background-color: #ffa5ab;
+}
+
+.success {
+    color: rgb(12, 100, 12);
+    border: 1px solid rgb(7, 101, 7);
+    background-color: #b5ffde;
+}
+
+.error,
+.success {
+    text-align: center;
+}
+
+.error ul,
+.success ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .new-post {
     padding: 16px 0;
     border-bottom: 1px solid #ccc;

@@ -9,12 +9,19 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function createNewPost(Request $request) {
+
+        $this->validate($request, [
+          'body' => 'required|max:1000'
+        ]);
+        
         $post = new Post();
         $post->body = $request['body'];
         $post->user_id = auth()->id();
-        $post->save();
-        
-        return redirect()->route('dashboard');
+        $message = "there was an error";
+        if($post->save()){
+          $message = "Your message has been successfully sent!!!";
+        };
+        return redirect()->route('dashboard')->with(['message' => $message]);
 
         //$request->user()->posts()->save($post);
         // return response()->json([
