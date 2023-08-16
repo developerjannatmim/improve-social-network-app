@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,4 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/dashboard', [UserController::class, 'getDashboard'])->name('dashboard')->middleware('auth');
 });
 
+Route::post('/createpost', [PostController::class, 'createNewPost'])->name('createpost');

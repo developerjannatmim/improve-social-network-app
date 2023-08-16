@@ -56,3 +56,10 @@ https://www.youtube.com/watch?v=PkiHgAmYLec&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0B
 Information:
 1. dashboard design
 
+## Laravel 5.2 PHP Build a social network - Creating Posts (Model & Controller) (tutorial-8)
+go to tutorial:
+https://www.youtube.com/watch?v=z-1bdYTNWm8&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=8
+
+Information:
+1. Controller
+2. Model
