@@ -123,9 +123,13 @@ Information:
 1. user logout
 2. Fixing Post Deletion
 
+## Laravel 5.2 PHP Build a social network - Editing Posts (View) (tutorial-13)
+go to tutorial:
+https://www.youtube.com/watch?v=IczOmFOlG3w&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV
 
-
-
+Information:
+1. create edit modal
+2. active edit button
 
 
 
