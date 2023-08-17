@@ -164,8 +164,14 @@ Information:
 3. setup update account route
 4. create account form
 
+## Laravel 5.2 PHP Build a social network - Image Upload (tutorial-18)
+go to tutorial:
+https://www.youtube.com/watch?v=cwB-H7wJItc&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=18
 
-
+Information:
+1. Image Upload
+2. image route setup
+2. image related all methods are in UserController
 
 
 
