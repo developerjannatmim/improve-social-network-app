@@ -42,3 +42,8 @@
     color: #aaa;
     font-style: italic;
 }
+
+.link {
+    list-style: none;
+    text-decoration: none;
+}

@@ -115,8 +115,13 @@ Information:
 2. create delete action in PostController
 3. create delete route in web
 
+## Laravel 5.2 PHP Build a social network - User Logout & Fixing Post Deletion (tutorial-12)
+go to tutorial:
+https://www.youtube.com/watch?v=E9kzgAxtTwM&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=12
 
-
+Information:
+1. user logout
+2. Fixing Post Deletion
 
 
 
