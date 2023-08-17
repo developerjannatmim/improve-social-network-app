@@ -1,4 +1,4 @@
-# Laravel-5.2
+# Laravel
 
 ## Laravel 5.2 PHP Build a social network - Setup & Introduction (tutorial-1)
 
