@@ -27,12 +27,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/createpost', [PostController::class, 'createNewPost'])->name('createpost')->middleware('auth');
     Route::get('/post-delete/{post_id}', [PostController::class, 'getDeletePost'])->name('post.delete')->middleware('auth');
     Route::get('/logout', [UserController::class, 'getLogOut'])->name('logout');
-    Route::post('/edit', function(\Illuminate\Http\Request $request) {
-        return response()->json(['message' => $request['postId']]);
-        /*{
-            message: '$request['body']',
-        }*/
-
-    })->name('edit');
+    Route::post('/edit', [PostController::class, 'editPost'])->name('edit');
 });
 

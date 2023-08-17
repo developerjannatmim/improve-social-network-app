@@ -145,8 +145,14 @@ https://www.youtube.com/watch?v=L2YXZ5fZcqM&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0B
 Information:
 1. Edit Posts with AJAX Request
 
+## Laravel 5.2 PHP Build a social network - Updating DB & View (tutorial-16)
+go to tutorial:
+https://www.youtube.com/watch?v=xiCk5OGCdCE&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=16
 
-
+Information:
+1. Updating DB & View
+2. modal hide
+3. successfully post editing
 
 
 
