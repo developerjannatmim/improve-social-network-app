@@ -23,7 +23,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/signup', [UserController::class, 'getSignUp'])->name('signup');
     Route::post('/signin', [UserController::class, 'getSignIn'])->name('signin');
     Route::get('/dashboard', [PostController::class, 'getDashboard'])->name('dashboard')->middleware('auth');
-    Route::get('/{post_id}', [PostController::class, 'getDeletePost'])->name('delete');
+    Route::post('/createpost', [PostController::class, 'createNewPost'])->name('createpost')->middleware('auth');
+    Route::get('/post-delete/{post_id}', [PostController::class, 'getDeletePost'])->name('post.delete')->middleware('auth');
 });
 
-Route::post('/createpost', [PostController::class, 'createNewPost'])->name('createpost');
