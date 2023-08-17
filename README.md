@@ -131,7 +131,12 @@ Information:
 1. create edit modal
 2. active edit button
 
+## Laravel 5.2 PHP Build a social network - Use jQuery to fetch Post Content (tutorial-14)
+go to tutorial:
+https://www.youtube.com/watch?v=VNw6EGDltNk&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=14
 
+Information:
+1. fetch post in edit modal using jquery
 
 
 
