@@ -19,24 +19,29 @@
           <a class="nav-link active" aria-current="page" href="{{ route('dashboard') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link active" href="#">Contact</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Blog</a>
           <li class="nav-item">
-          <a class="nav-link" href="{{ route('home') }}">SignIn</a>
+          <a class="nav-link active" href="{{ route('home') }}">SignIn</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="{{ route('home') }}">SignUp</a>
+          <a class="nav-link active" href="{{ route('home') }}">SignUp</a>
           </li>
-          <li class="nav-item">
-          <a class="nav-link" href="{{ route('logout') }}">Logout</a>
-          </li>
+        </li>
+      </ul>
+      <ul class="navbar-nav justify-content-end">
+        <li class="nav-item">
+        <a class="nav-link active" href="{{ route('logout') }}">Logout</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link active" href="{{ route('account') }}">Account</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-    </header>
+</header>
 </body>
 </html>

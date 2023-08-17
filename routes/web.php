@@ -26,6 +26,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/dashboard', [PostController::class, 'getDashboard'])->name('dashboard')->middleware('auth');
     Route::post('/createpost', [PostController::class, 'createNewPost'])->name('createpost')->middleware('auth');
     Route::get('/post-delete/{post_id}', [PostController::class, 'getDeletePost'])->name('post.delete')->middleware('auth');
+    Route::get('/account', [UserController::class, 'getAccount'])->name('account');
+    Route::post('/update-account', [UserController::class, 'updateAccount'])->name('account.save');
     Route::get('/logout', [UserController::class, 'getLogOut'])->name('logout');
     Route::post('/edit', [PostController::class, 'editPost'])->name('edit');
 });

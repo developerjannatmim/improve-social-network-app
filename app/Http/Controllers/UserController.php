@@ -68,35 +68,14 @@ class UserController extends Controller
     Auth::logout();
     return redirect()->route('home');
   }
-  /**
-   * Display the specified resource.
-   */
-  public function show(string $id)
+
+  public function getAccount()
   {
-    //
+    return view('account', ['user' => Auth::user()]);
   }
 
-  /**
-   * Show the form for editing the specified resource.
-   */
-  public function edit(string $id)
+  public function updateAccount()
   {
-    //
-  }
-
-  /**
-   * Update the specified resource in storage.
-   */
-  public function update(Request $request, string $id)
-  {
-    //
-  }
-
-  /**
-   * Remove the specified resource from storage.
-   */
-  public function destroy(string $id)
-  {
-    //
+    return view('account');
   }
 }

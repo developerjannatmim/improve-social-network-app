@@ -154,7 +154,15 @@ Information:
 2. modal hide
 3. successfully post editing
 
+## Laravel 5.2 PHP Build a social network - User Account (tutorial-17)
+go to tutorial:
+https://www.youtube.com/watch?v=tQT2Vn8BaHo&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=17
 
+Information:
+1. setup user account
+2. setup account route
+3. setup update account route
+4. create account form
 
 
 
