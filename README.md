@@ -138,8 +138,12 @@ https://www.youtube.com/watch?v=VNw6EGDltNk&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0B
 Information:
 1. fetch post in edit modal using jquery
 
+## Laravel 5.2 PHP Build a social network - Edit Posts with AJAX Request (tutorial-15)
+go to tutorial:
+https://www.youtube.com/watch?v=L2YXZ5fZcqM&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=15
 
-
+Information:
+1. Edit Posts with AJAX Request
 
 
 
