@@ -173,7 +173,14 @@ Information:
 2. image route setup
 2. image related all methods are in UserController
 
+## Laravel 5.2 PHP Build a social network - Likes & Dislikes (1/3 - Models & AJAX) (tutorial-19)
+go to tutorial:
+https://www.youtube.com/watch?v=y5qZJ7sYN88&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=19
 
+Information:
+1. create like migration file
+2. create like model
+3. setup user and post relationships with like 
 
 
 

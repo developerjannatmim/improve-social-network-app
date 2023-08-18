@@ -28,14 +28,13 @@
         Posted by {{ $post->user->first_name }} on {{ $post->created_at }}
       </div>
       <div class="interaction">
-        <a href="#">Like</a> |
-        <a href="#">Dislike</a>
+        <a class="like" href="#">Like</a> |
+        <a class="like" href="#">Dislike</a>
         @if( Auth::user() == $post->user )
         |
         <a href="#" class="edit">Edit</a> |
         <a href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a>
         @endif
-
       </div>
     </article>
     @endforeach
@@ -67,6 +66,7 @@
 
 <script>
   var token = '{{ Session::token() }}';
-  var url = "{{ route('edit') }}";
+  var urlEdit = "{{ route('edit') }}";
+  var isLike = "{{ route('like') }}";
 </script>
 @endsection
