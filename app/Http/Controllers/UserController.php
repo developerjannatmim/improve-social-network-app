@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Spatie\Backtrace\File;
+use Illuminate\Support\Facades\File;
+// use Spatie\Backtrace\File;
 
 class UserController extends Controller
 {
@@ -80,7 +81,7 @@ class UserController extends Controller
   public function postSaveAccount(Request $request)
   {
     $this->validate($request, [
-      'first_name' => 'required|max:120'
+      'first_name' => 'required',
     ]);
     $user = Auth::user();
     $user->first_name = $request['first_name'];
@@ -88,7 +89,7 @@ class UserController extends Controller
     $file = $request->file('image');
     $filename = $request['first_name'] . '-' . $user->id . 'jpg';
     if ($file) {
-      Storage::disk('local')->storeAs($filename, File::get($file));
+      Storage::disk('local')->put($filename, File::get($file));
     }
     return redirect()->route('account');
   }
