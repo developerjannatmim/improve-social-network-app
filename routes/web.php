@@ -32,4 +32,5 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/logout', [UserController::class, 'getLogOut'])->name('logout');
     Route::post('/edit', [PostController::class, 'editPost'])->name('edit');
+    Route::post('/like', [PostController::class, 'postLikePost'])->name('like');
 });

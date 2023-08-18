@@ -107,81 +107,106 @@ Information:
 5. added post date
 
 ## Laravel 5.2 PHP Build a social network - Deleting Posts (tutorial-11)
+
 go to tutorial:
 https://www.youtube.com/watch?v=VoYzc3TLwmQ&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=11
 
 Information:
+
 1. delete post
 2. create delete action in PostController
 3. create delete route in web
 
 ## Laravel 5.2 PHP Build a social network - User Logout & Fixing Post Deletion (tutorial-12)
+
 go to tutorial:
 https://www.youtube.com/watch?v=E9kzgAxtTwM&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=12
 
 Information:
+
 1. user logout
 2. Fixing Post Deletion
 
 ## Laravel 5.2 PHP Build a social network - Editing Posts (View) (tutorial-13)
+
 go to tutorial:
 https://www.youtube.com/watch?v=IczOmFOlG3w&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV
 
 Information:
+
 1. create edit modal
 2. active edit button
 
 ## Laravel 5.2 PHP Build a social network - Use jQuery to fetch Post Content (tutorial-14)
+
 go to tutorial:
 https://www.youtube.com/watch?v=VNw6EGDltNk&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=14
 
 Information:
+
 1. fetch post in edit modal using jquery
 
 ## Laravel 5.2 PHP Build a social network - Edit Posts with AJAX Request (tutorial-15)
+
 go to tutorial:
 https://www.youtube.com/watch?v=L2YXZ5fZcqM&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=15
 
 Information:
+
 1. Edit Posts with AJAX Request
 
 ## Laravel 5.2 PHP Build a social network - Updating DB & View (tutorial-16)
+
 go to tutorial:
 https://www.youtube.com/watch?v=xiCk5OGCdCE&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=16
 
 Information:
+
 1. Updating DB & View
 2. modal hide
 3. successfully post editing
 
 ## Laravel 5.2 PHP Build a social network - User Account (tutorial-17)
+
 go to tutorial:
 https://www.youtube.com/watch?v=tQT2Vn8BaHo&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=17
 
 Information:
+
 1. setup user account
 2. setup account route
 3. setup update account route
 4. create account form
 
 ## Laravel 5.2 PHP Build a social network - Image Upload (tutorial-18)
+
 go to tutorial:
 https://www.youtube.com/watch?v=cwB-H7wJItc&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=18
 
 Information:
+
 1. Image Upload
 2. image route setup
-2. image related all methods are in UserController
+3. image related all methods are in UserController
 
 ## Laravel 5.2 PHP Build a social network - Likes & Dislikes (1/3 - Models & AJAX) (tutorial-19)
+
 go to tutorial:
 https://www.youtube.com/watch?v=y5qZJ7sYN88&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=19
 
 Information:
+
 1. create like migration file
 2. create like model
-3. setup user and post relationships with like 
+3. setup user and post relationships with like
 
+## Laravel 5.2 PHP Build a social network - Likes & Dislikes (2/3 - Finishing the Backend) (tutorial-20)
 
+go to tutorial:
+https://www.youtube.com/watch?v=drM19VKbCgU&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=20
 
+Information:
 
+1. create like method
+2. active like and dislike button
+3. create like route
