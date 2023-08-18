@@ -28,8 +28,8 @@
         Posted by {{ $post->user->first_name }} on {{ $post->created_at }}
       </div>
       <div class="interaction">
-        <a class="like" href="#">Like</a> |
-        <a class="like" href="#">Dislike</a>
+        <a class="like" href="#">{{ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }}</a> |
+        <a class="like" href="#">{{ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 0 ? 'You don\'t like this post' : 'Dislike' : 'Dislike'  }}</a>
         @if( Auth::user() == $post->user )
         |
         <a href="#" class="edit">Edit</a> |

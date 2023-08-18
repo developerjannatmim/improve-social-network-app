@@ -206,7 +206,22 @@ go to tutorial:
 https://www.youtube.com/watch?v=drM19VKbCgU&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=20
 
 Information:
-
 1. create like method
 2. active like and dislike button
 3. create like route
+
+## Laravel 5.2 PHP Build a social network - Likes & Dislikes (3/3 - Updating the View) (tutorial-21)
+go to tutorial:
+https://www.youtube.com/watch?v=sLGkQjEbOyE&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0BxGV&index=21
+
+Information:
+1. Likes & Dislikes (Updating the View)
+
+
+
+
+
+
+
+
+
