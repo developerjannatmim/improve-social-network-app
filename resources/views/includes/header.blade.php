@@ -21,28 +21,29 @@
               <a class="nav-link active" aria-current="page" href="{{ route('public') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="{{ route('contact') }}">Contact</a>
+              <a class="nav-link active" href="{{ route('public') }}">Contact</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="{{ route('blog') }}" tabindex="-1" aria-disabled="true">Blog</a>
             </li>
           </ul>
-          @if( Auth::user() )
           <ul class="navbar-nav justify-content-end">
-            <!-- <li class="nav-item">
-              <a class="nav-link active" href="{{ route('home') }}">Login</a>
-            </li> -->
-            <li class="nav-item">
+          @if( !Auth::user() )
+          <li class="nav-item">
               <a class="nav-link active" href="{{ route('register') }}">Register</a>
-            </li>
-            <!-- <li class="nav-item">
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" href="{{ route('login') }}">Login</a>
+          </li>
+            @else
+            <li class="nav-item">
                <a class="nav-link active" href="{{ route('logout') }}">Logout</a>
-            </li> -->
+            </li>
             <li class="nav-item">
               <a class="nav-link active" href="{{ route('account') }}">Account</a>
             </li>
+            @endif
           </ul>
-          @endif
         </div>
       </div>
     </nav>

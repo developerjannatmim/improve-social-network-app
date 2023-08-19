@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Session;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -38,7 +39,7 @@ class AuthController extends Controller
       $user->save();
       Auth::login($user);
   
-      return redirect()->route('blog');
+      return redirect()->route('dashboard');
     }
 
     public function getLogin(Request $request)
@@ -48,14 +49,15 @@ class AuthController extends Controller
         'password' => 'required'
       ]);
       if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
-        return redirect()->route('blog');
+        return redirect()->route('dashboard');
       };
       return redirect()->back();
     }
 
     public function getLogOut()
     {
+      Session::flush();
       Auth::logout();
-      return redirect()->route('/');
+      return redirect()->route('login');
     }
 }

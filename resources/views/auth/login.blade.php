@@ -9,7 +9,7 @@ Welcome!
 <div class="row justify-content-center">
   <div class="col-md-6">
     <h3>Sign In</h3>
-    <form action=" {{ route('login') }} " method="POST">
+    <form action=" {{ route('login.post') }} " method="POST">
         @csrf
       <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
         <label for="email" class="mb-2">Email</label>
