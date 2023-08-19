@@ -15,6 +15,12 @@ class PostController extends Controller
     $posts = Post::orderBy('created_at', 'desc')->get();
     return view('blog', ['posts' => $posts]);
   }
+
+  public function create()
+  {
+    return view('create-blog');
+  }
+
   public function createNewPost(Request $request)
   {
 
@@ -41,7 +47,7 @@ class PostController extends Controller
       return redirect()->back();
     }
     $post->delete();
-    return redirect()->route('blog')->with(['message' => "Successfully deleted"]);
+    return redirect()->route('blog')->with(['success', 'Post Deleted successfully.']);
   }
 
   public function editPost(Request $request)
