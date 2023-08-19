@@ -23,7 +23,7 @@ class Authenticate extends Middleware
             if($request->ajax()) {
                 return response('Unauthorized.', 401);
             }else {
-                return redirect()->route('home');
+                return redirect()->route('dashboard');
             }
         }
         return $next($request);

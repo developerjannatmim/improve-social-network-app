@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-  public function getDashboard()
+  public function getBlog()
   {
     $posts = Post::orderBy('created_at', 'desc')->get();
-    return view('dashboard', ['posts' => $posts]);
+    return view('blog', ['posts' => $posts]);
   }
   public function createNewPost(Request $request)
   {
@@ -31,7 +31,7 @@ class PostController extends Controller
     if ($post->save()) {
       $message = "Your Post added successfully";
     };
-    return redirect()->route('dashboard')->with(['message' => $message]);
+    return redirect()->route('blog')->with(['message' => $message]);
   }
 
   public function getDeletePost($post_id)
@@ -41,7 +41,7 @@ class PostController extends Controller
       return redirect()->back();
     }
     $post->delete();
-    return redirect()->route('dashboard')->with(['message' => "Successfully deleted"]);
+    return redirect()->route('blog')->with(['message' => "Successfully deleted"]);
   }
 
   public function editPost(Request $request)

@@ -67,7 +67,7 @@ https://www.youtube.com/watch?v=PkiHgAmYLec&list=PL55RiY5tL51oloSGk5XdO2MGjPqc0B
 
 Information:
 
-1. dashboard design
+1. blog design
 
 ## Laravel 5.2 PHP Build a social network - Creating Posts (Model & Controller) (tutorial-8)
 

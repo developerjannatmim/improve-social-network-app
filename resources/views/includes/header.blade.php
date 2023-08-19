@@ -11,36 +11,38 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="{{ route('public') }}">Social Network</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ route('dashboard') }}">Home</a>
+              <a class="nav-link active" aria-current="page" href="{{ route('public') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Contact</a>
+              <a class="nav-link active" href="{{ route('contact') }}">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Blog</a>
-            <li class="nav-item">
-              <a class="nav-link active" href="{{ route('home') }}">SignIn</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="{{ route('home') }}">SignUp</a>
-            </li>
+              <a class="nav-link active" href="{{ route('blog') }}" tabindex="-1" aria-disabled="true">Blog</a>
             </li>
           </ul>
+          @if( Auth::user() )
           <ul class="navbar-nav justify-content-end">
+            <!-- <li class="nav-item">
+              <a class="nav-link active" href="{{ route('home') }}">Login</a>
+            </li> -->
             <li class="nav-item">
-              <a class="nav-link active" href="{{ route('logout') }}">Logout</a>
+              <a class="nav-link active" href="{{ route('register') }}">Register</a>
             </li>
+            <!-- <li class="nav-item">
+               <a class="nav-link active" href="{{ route('logout') }}">Logout</a>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link active" href="{{ route('account') }}">Account</a>
             </li>
           </ul>
+          @endif
         </div>
       </div>
     </nav>
