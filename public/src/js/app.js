@@ -51,7 +51,11 @@ $(".like").on("click", function (event) {
             if (isLike) {
                 event.target.nextElementSibling.innerText = "Dislike";
             } else {
-                event.target.nextElementSibling.innerText = "Like";
+                event.target.previousElementSibling.innerText = "Like";
             }
         });
 });
+
+setTimeout(function() {
+    $('#delete-post').fadeOut('fast');
+}, 2000);

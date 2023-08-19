@@ -22,7 +22,7 @@ class AuthController extends Controller
     public function getRegister(Request $request)
     {
       $this->validate($request, [
-        'first_name' => 'required',
+        'first_name' => 'required|unique:users',
         'email' => 'required|email|max:120|unique:users',
         'password' => 'required|min:4'
       ]);
@@ -39,7 +39,7 @@ class AuthController extends Controller
       $user->save();
       Auth::login($user);
   
-      return redirect()->route('dashboard');
+      return redirect()->route('dashboard')->with(['success' => 'Your register is successful']);
     }
 
     public function getLogin(Request $request)
@@ -49,8 +49,8 @@ class AuthController extends Controller
         'password' => 'required'
       ]);
       if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
-        return redirect()->route('dashboard');
-      };
+        return redirect()->route('dashboard')->with(['success' => 'Login successful']);
+      }
       return redirect()->back();
     }
 
@@ -58,6 +58,6 @@ class AuthController extends Controller
     {
       Session::flush();
       Auth::logout();
-      return redirect()->route('login');
+      return redirect()->route('login')->with(['success' => 'Logout successful']);
     }
 }

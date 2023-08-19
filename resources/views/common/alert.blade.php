@@ -1,6 +1,6 @@
 {{-- Message --}}
-@if (session::has('success'))
-    <div class="alert alert-success alert-dismissible" role="alert">
+@if (Session::has('success'))
+    <div id="delete-post" class="alert alert-success alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert">
             <i class="fa fa-times"></i>
         </button>
@@ -8,11 +8,11 @@
     </div>
 @endif
 
-@if (session::has('error'))
-    <div class="alert alert-danger alert-dismissible" role="alert">
+@if (Session::has('error'))
+    <div id="delete-post" class="alert alert-danger alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert">
             <i class="fa fa-times"></i>
         </button>
-        <strong>Error !</strong> {{ session('error') }}
+         {{ session('error') }}
     </div>
 @endif

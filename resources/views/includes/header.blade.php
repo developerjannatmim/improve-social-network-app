@@ -31,7 +31,7 @@
             </li>
           </ul>
           <ul class="navbar-nav justify-content-end">
-          @if( !Auth::user() )
+          @if( !Auth::check() )
           <li class="nav-item">
               <a class="nav-link active" href="{{ route('register') }}">Register</a>
           </li>

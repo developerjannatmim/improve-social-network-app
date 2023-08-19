@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AccountController;
 use GuzzleHttp\Psr7\Message;
 use Illuminate\Support\Facades\Route;
 
@@ -17,12 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+
   Route::get('/dashboard', function () {
       return view('dashboard');
   })->name('dashboard')->middleware('auth');
 
-  Route::get('/', function () {
+  Route::get('/public', function () {
     return view('public');
   })->name('public');
 
@@ -31,9 +32,9 @@ Route::group(['middleware' => ['web']], function () {
   })->name('create')->middleware('auth');
 
   //Login & Register
-  Route::get('/register', [AuthController::class, 'registration'])->name('register');
+  Route::get('/register', [AuthController::class, 'registration'])->name('register')->middleware('guest');
   Route::post('/post-register', [AuthController::class, 'getRegister'])->name('register.post');
-  Route::get('/login', [AuthController::class, 'index'])->name('login');
+  Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
   Route::post('/post-login', [AuthController::class, 'getLogin'])->name('login.post');
   Route::get('/logout', [AuthController::class, 'getLogOut'])->name('logout');
 
@@ -50,4 +51,3 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/userimage/{filename}', [AccountController::class, 'getUserImage'])->name('account.image')->middleware('auth');
   
   //Route::get('/contact', [AuthController::class, 'getContact'])->name('contact');
-});

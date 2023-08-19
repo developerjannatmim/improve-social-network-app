@@ -5,7 +5,7 @@ Welcome!
 @endsection
 
 @section('content')
-@include('includes.message-block')
+@include('common.alert')
 <div class="row justify-content-center">
   <div class="col-md-6">
     <h3>Sign In</h3>

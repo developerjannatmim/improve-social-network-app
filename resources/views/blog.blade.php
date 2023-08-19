@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-@include('includes.message-block')
 @include('common.alert')
 <section class="row new-post">
   <div class="col-md-6 col-md-offset-3">
@@ -26,15 +25,23 @@
     <article class="post" data-postid="{{ $post->id }}">
       <p>{{ $post->body }}</p>
       <div class="info">
-        Posted by {{ $post->user->first_name }} on {{ $post->created_at }}
+        Posted by {{ $post->user?->first_name }} on {{ $post->created_at }}
       </div>
       <div class="interaction">
-        <a class="like" href="#">{{ Auth::user()?->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }}</a> |
-        <a class="like" href="#">{{ Auth::user()?->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 0 ? 'You don\'t like this post' : 'Dislike' : 'Dislike'  }}</a>
+<!--       
+        <a class="like" href="#">{{ Auth::user()?->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }}</a> 
+        |
+        <a class="like" href="#">{{ Auth::user()?->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 0 ? 'You don\'t like this post' : 'Dislike' : 'Dislike'  }}</a> -->
+
         @if( Auth::user() == $post->user )
         |
         <a href="#" class="edit">Edit</a> |
-        <a href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a>
+        <a onclick="return myFunction()" href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a>
+
+        @elseif(Auth::user() != $post->user)
+        <a class="like" href="#">{{ Auth::user()?->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }}</a> 
+        |
+        <a class="like" href="#">{{ Auth::user()?->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 0 ? 'You don\'t like this post' : 'Dislike' : 'Dislike'  }}</a>
         @endif
       </div>
     </article>
@@ -69,5 +76,11 @@
   var token = '{{ Session::token() }}';
   var urlEdit = "{{ route('edit') }}";
   var urlLike = "{{ route('like') }}";
+
+  function myFunction() {
+      if(!confirm("Are You Sure to delete this"))
+      event.preventDefault();
+  }
+
 </script>
 @endsection

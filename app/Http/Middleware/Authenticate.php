@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AuthController;
 
 class Authenticate extends Middleware
 {
@@ -23,9 +24,11 @@ class Authenticate extends Middleware
             if($request->ajax()) {
                 return response('Unauthorized.', 401);
             }else {
-                return redirect()->route('dashboard');
+                return redirect()->route('login');
             }
         }
         return $next($request);
+        
     }
+    
 }

@@ -18,7 +18,8 @@ class PostController extends Controller
 
   public function create()
   {
-    return view('create-blog');
+    $posts = Post::orderBy('created_at', 'desc')->get();
+    return view('create-blog', ['posts' => $posts]);
   }
 
   public function createNewPost(Request $request)
@@ -30,14 +31,9 @@ class PostController extends Controller
 
     $post = new Post();
     $post->body = $request['body'];
-    //$post->user_id = auth()->id();
     $request->user()->posts()->save($post);
-    $message = "there was an error";
-
-    if ($post->save()) {
-      $message = "Your Post added successfully";
-    };
-    return redirect()->route('blog')->with(['message' => $message]);
+    $post->save();
+    return redirect()->route('blog')->with(['success' => 'Your Post added successfully']);
   }
 
   public function getDeletePost($post_id)
@@ -47,7 +43,7 @@ class PostController extends Controller
       return redirect()->back();
     }
     $post->delete();
-    return redirect()->route('blog')->with(['success', 'Post Deleted successfully.']);
+    return redirect()->route('blog')->with(['error' => 'Your post has been Deleted']);
   }
 
   public function editPost(Request $request)
