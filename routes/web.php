@@ -31,6 +31,7 @@ Route::group(['middleware' => ['web']], function () {
   Route::post('/post-register', [AuthController::class, 'getRegister'])->name('register.post');
   Route::get('/login', [AuthController::class, 'index'])->name('login');
   Route::post('/post-login', [AuthController::class, 'getLogin'])->name('login.post');
+  Route::get('/logout', [AuthController::class, 'getLogOut'])->name('logout');
 
   //Blog
   Route::get('/blog', [PostController::class, 'getBlog'])->name('blog');
@@ -44,6 +45,5 @@ Route::group(['middleware' => ['web']], function () {
   Route::post('/updateaccount', [UserController::class, 'postSaveAccount'])->name('account.save')->middleware('auth');
   Route::get('/userimage/{filename}', [UserController::class, 'getUserImage'])->name('account.image')->middleware('auth');
   
-  Route::get('/logout', [AuthController::class, 'getLogOut'])->name('logout');
   //Route::get('/contact', [AuthController::class, 'getContact'])->name('contact');
 });
