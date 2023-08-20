@@ -58,4 +58,4 @@ $(".like").on("click", function (event) {
 
 setTimeout(function() {
     $('#message').fadeOut('fast');
-}, 2000);
+}, 3000);

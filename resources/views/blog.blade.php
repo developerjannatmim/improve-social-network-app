@@ -28,17 +28,17 @@
         Posted by {{ $post->user?->first_name }} on {{ $post->created_at }}
       </div>
       <div class="interaction">
-<!--       
+<!--
         <a class="like" href="#">{{ Auth::user()?->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }}</a> 
         |
         <a class="like" href="#">{{ Auth::user()?->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 0 ? 'You don\'t like this post' : 'Dislike' : 'Dislike'  }}</a> -->
 
-        @if( Auth::user() == $post->user )
+        @if( Auth::id() === $post->user_id )
         |
-        <a href="#" class="edit">Edit</a> |
+        <a href="{{route('edit')}}" class="edit">Edit</a> |
         <a onclick="return myFunction()" href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a>
 
-        @elseif(Auth::user() != $post->user)
+        @else
         <a class="like" href="#">{{ Auth::user()?->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }}</a> 
         |
         <a class="like" href="#">{{ Auth::user()?->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 0 ? 'You don\'t like this post' : 'Dislike' : 'Dislike'  }}</a>
@@ -59,7 +59,6 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="post-body">Edit the post</label>
             <textarea class="form-control" name="post-body" id="post-body" rows="5"></textarea>
           </div>
         </form>
@@ -78,8 +77,8 @@
   var urlLike = "{{ route('like') }}";
 
   function myFunction() {
-      if(!confirm("Are You Sure to delete this"))
-      event.preventDefault();
+    if(!confirm("Are You Sure to delete this"))
+    event.preventDefault();
   }
 
 </script>
