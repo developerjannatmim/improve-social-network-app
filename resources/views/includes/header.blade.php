@@ -26,9 +26,6 @@
             <li class="nav-item">
               <a class="nav-link active" href="{{ route('blog') }}" tabindex="-1" aria-disabled="true">Blog</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="{{ route('create') }}" tabindex="-1" aria-disabled="true">Create Blog</a>
-            </li>
           </ul>
           <ul class="navbar-nav justify-content-end">
           @if( !Auth::check() )

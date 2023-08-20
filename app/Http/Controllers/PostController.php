@@ -16,12 +16,6 @@ class PostController extends Controller
     return view('blog', ['posts' => $posts]);
   }
 
-  public function create()
-  {
-    $posts = Post::orderBy('created_at', 'desc')->get();
-    return view('create-blog', ['posts' => $posts]);
-  }
-
   public function createNewPost(Request $request)
   {
 

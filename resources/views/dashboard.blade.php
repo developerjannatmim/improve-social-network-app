@@ -6,7 +6,7 @@ Dashboard
 
 @section('content')
 @if (session('success'))
-<div id="delete-post" class="alert alert-success" role="alert">
+<div id="message" class="alert alert-success" role="alert">
   {{ session('success') }}
 </div>
 @endif

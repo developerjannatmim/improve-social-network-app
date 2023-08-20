@@ -57,5 +57,5 @@ $(".like").on("click", function (event) {
 });
 
 setTimeout(function() {
-    $('#delete-post').fadeOut('fast');
+    $('#message').fadeOut('fast');
 }, 2000);

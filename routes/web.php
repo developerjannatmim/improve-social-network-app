@@ -23,13 +23,9 @@ use Illuminate\Support\Facades\Route;
       return view('dashboard');
   })->name('dashboard')->middleware('auth');
 
-  Route::get('/public', function () {
+  Route::get('/', function () {
     return view('public');
   })->name('public');
-
-  Route::get('/create', function () {
-    return view('create-blog');
-  })->name('create')->middleware('auth');
 
   //Login & Register
   Route::get('/register', [AuthController::class, 'registration'])->name('register')->middleware('guest');
@@ -39,7 +35,7 @@ use Illuminate\Support\Facades\Route;
   Route::get('/logout', [AuthController::class, 'getLogOut'])->name('logout');
 
   //Blog
-  Route::get('/blog', [PostController::class, 'getBlog'])->name('blog');
+  Route::get('/blog', [PostController::class, 'getBlog'])->name('blog')->middleware('auth');
   Route::post('/createpost', [PostController::class, 'createNewPost'])->name('createpost')->middleware('auth');
   Route::post('/edit', [PostController::class, 'editPost'])->name('edit')->middleware('auth');
   Route::get('/post-delete/{post_id}', [PostController::class, 'getDeletePost'])->name('post.delete')->middleware('auth');
