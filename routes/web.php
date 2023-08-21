@@ -45,6 +45,6 @@ use Illuminate\Support\Facades\Route;
   
   //Account
   Route::get('/account', [AccountController::class, 'getAccount'])->name('account')->middleware('auth');
-  Route::post('/updateaccount', [AccountController::class, 'postSaveAccount'])->name('account.save')->middleware('auth');
-  
+  Route::post('/updateaccount', [AccountController::class, 'postSaveAccount'])->name('account.save');
+  //Route::get('/userimage/{name}', [AccountController::class, 'getUserImage'])->name('account.image')->middleware('auth');
   //Route::get('/contact', [AuthController::class, 'getContact'])->name('contact');
