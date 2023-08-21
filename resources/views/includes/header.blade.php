@@ -21,7 +21,7 @@
               <a class="nav-link active" aria-current="page" href="{{ route('public') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="{{ route('public') }}">Contact</a>
+              <a class="nav-link active" href="{{ route('contact') }}">Contact</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="{{ route('blog') }}" tabindex="-1" aria-disabled="true">Blog</a>

@@ -32,10 +32,12 @@ use Illuminate\Support\Facades\Route;
   Route::post('/post-register', [AuthController::class, 'getRegister'])->name('register.post');
   Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
   Route::post('/post-login', [AuthController::class, 'getLogin'])->name('login.post');
-  Route::get('/logout', [AuthController::class, 'getLogOut'])->name('logout');
+  Route::get('/logout', [AuthController::class, 'getLogOut'])->name('logout')->middleware('auth');
 
   //Blog
-  Route::get('/blog', [PostController::class, 'getBlog'])->name('blog')->middleware('auth');
+  Route::get('/blog', [PostController::class, 'getBlog'])->name('blog');
+
+  Route::get('/contact', fn() => view('contact'))->name('contact');
   Route::post('/createpost', [PostController::class, 'createNewPost'])->name('createpost')->middleware('auth');
   Route::post('/edit', [PostController::class, 'editPost'])->name('edit')->middleware('auth');
   Route::get('/post-delete/{post_id}', [PostController::class, 'getDeletePost'])->name('post.delete')->middleware('auth');
@@ -43,7 +45,11 @@ use Illuminate\Support\Facades\Route;
   
   //Account
   Route::get('/account', [AccountController::class, 'getAccount'])->name('account')->middleware('auth');
+<<<<<<< HEAD
+  Route::post('/updateaccount', [AccountController::class, 'postSaveAccount'])->name('account.save');
+  //Route::get('/userimage/{name}', [AccountController::class, 'getUserImage'])->name('account.image')->middleware('auth');
+=======
   Route::post('/updateaccount', [AccountController::class, 'postSaveAccount'])->name('account.save')->middleware('auth');
-  Route::get('/userimage/{filename}', [AccountController::class, 'getUserImage'])->name('account.image')->middleware('auth');
   
+>>>>>>> c95edf0b83413ab78956ddf1806c29b2a030905b
   //Route::get('/contact', [AuthController::class, 'getContact'])->name('contact');

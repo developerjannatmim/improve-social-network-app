@@ -21,7 +21,7 @@ class AuthController extends Controller
 
     public function getRegister(Request $request)
     {
-      $this->validate($request, [
+      $validated = $request->validate([
         'first_name' => 'required|unique:users',
         'email' => 'required|email|max:120|unique:users',
         'password' => 'required|min:4'
@@ -44,7 +44,7 @@ class AuthController extends Controller
 
     public function getLogin(Request $request)
     {
-      $this->validate($request, [
+      $validated = $request->validate([
         'email' => 'required',
         'password' => 'required'
       ]);
