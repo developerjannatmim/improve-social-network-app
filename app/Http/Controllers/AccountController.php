@@ -18,29 +18,20 @@ class AccountController extends Controller
   
     public function postSaveAccount(Request $request)
     {
-      $this->validate($request, [
+      $validated = $request->validate([
         'first_name' => 'required',
+        'image' => 'required|mimes:jpeg,jpg,png,gif,svg'
       ]);
+
       $user = Auth::user();
       $user->first_name = $request['first_name'];
-      $user->update();
-      $file = $request->file('image');
-      $filename = $user->id . 'jpg';
-
-      if(file_exists($filename)){
-        $user->update();
-      }
-
-      if ($file) {
-        Storage::disk('local')->put($filename, File::get($file));
-      }
+      $image_name = time().".".$request->image->extension();
+      $request->image->move(public_path('users'), $image_name);
+      $path = "/users/".$image_name;
+      $user->name = $request->name;
+      $user->image = $image_name;
+      $user->save();
       return redirect()->route('account');
     }
-  
-    public function getUserImage($filename)
-  
-    {
-      $file = Storage::disk('local')->get($filename);
-      return new Response($file, 200);
-    }
+
 }

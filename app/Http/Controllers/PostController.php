@@ -19,7 +19,7 @@ class PostController extends Controller
   public function createNewPost(Request $request)
   {
 
-    $this->validate($request, [
+    $validated = $request->validate([
       'body' => 'required|max:1000'
     ]);
 
@@ -42,7 +42,7 @@ class PostController extends Controller
 
   public function editPost(Request $request)
   {
-    $this->validate($request, [
+    $validated = $request->validate([
       'body' => 'required'
     ]);
     $post = Post::find($request['postId']);

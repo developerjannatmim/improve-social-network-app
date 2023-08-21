@@ -17,18 +17,16 @@ Account
       </div>
       <div class="form-group">
         <label for="image">Image (only.jpg)</label>
-        <input type="file" name="image" class="form-control" id="image">
+        <input type="file" name="image" class="form-control" id="image" >
       </div>
       <button type="submit" class="btn btn-primary">Save Account</button>
       <input type="hidden" name="_token" value="{{ Session::token() }}" />
     </form>
   </div>
 </section>
-@if(Storage::disk('local')->has($user?->id . 'jpg'))
 <section class="row new-post">
   <div class="col-md-6 col-md-offset-3">
-    <img src="{{ route('account.image', ['filename' => $user?->id . 'jpg']) }}" alt="" class="img-responsive" />
+    <img src="{{ $user->image }}" alt="" class="img-responsive" />
   </div>
 </section>
-@endif
 @endsection
