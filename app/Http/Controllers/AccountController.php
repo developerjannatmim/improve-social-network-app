@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class AccountController extends Controller
 {
+
   public function getAccount(Request $request)
   {
     return view('account', [
@@ -40,4 +41,39 @@ class AccountController extends Controller
     return redirect()->route('account');
   }
 
-}
+    }
+
+    if ($validated['profile']) {
+      Image::updateOrCreate(
+        ['user_id' => $user->id],
+        ['name' => $validated['profile']->store('images', 'public')],
+      );
+    }
+
+    return redirect()->route('account');
+
+  public function getAccount()
+    {
+      return view('account', ['user' => Auth::user()]);
+    }
+  
+    public function postSaveAccount(Request $request)
+    {
+      $validated = $request->validate([
+        'first_name' => 'required',
+        'image' => 'required|mimes:jpeg,jpg,png,gif,svg'
+      ]);
+
+      $user = Auth::user();
+      $user->first_name = $request['first_name'];
+      $image_name = time().".".$request->image->extension();
+      $request->image->move(public_path('users'), $image_name);
+      $path = "/users/".$image_name;
+      $user->name = $request->name;
+      $user->image = $image_name;
+      $user->save();
+      return redirect()->route('account');
+    }
+
+  }
+
