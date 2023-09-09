@@ -23,7 +23,7 @@ class PostController extends Controller
       'body' => 'required|max:1000'
     ]);
 
-    $post = new Post();
+    $post = new Post;
     $post->body = $request['body'];
     $request->user()->posts()->save($post);
     $post->save();
